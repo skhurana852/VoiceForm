@@ -1,0 +1,163 @@
+<html>
+<head>
+<link rel="stylesheet" href="Bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap-grid.css.map">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap-grid.min.css.map">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap-reboot.min.css.map">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.css.map">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css.map">
+    <script src="Bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="Bootstrap/js/bootstrap.bundle.js.map"></script>
+    <script src="Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="Bootstrap/js/bootstrap.js"></script>
+   <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<!-- HTML5 Speech Recognition API -->
+<!-- CSS Styles -->
+<style>
+    body{
+        background-color:cyan    }
+  .speech {border: 1px solid #DDD; width: 300px; padding: 0; margin: 0}
+  .speech input {border: 0; width: 240px; display: inline-block; height: 30px;}
+  .speech img {float: right; width: 40px }
+  
+</style>
+</head>
+    <body>
+        <center><h1>voice form</h1></center>
+<!-- Search Form -->
+ <div style="padding-left:450px">
+<form name="myform" method="post" onsubmit="return validateform()">
+  <div class="form-group">
+    <label for="SerialNo">Serial No:</label>
+    <select class="form-control" style="width:50%" id="SerialNo" >
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+      <option>10</option>
+        <option>11</option>
+        <option>12</option>
+        <option>13</option>
+        
+    </select>
+  </div>
+        <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" class="form-control" style="width:50%" id="name" placeholder="Enter Name">
+            <img src="mike.jpg" width="40px" onclick="startDictation('name')">
+  </div>
+    <div class="form-group">
+    <label for="fathername">Father's Name:</label>
+    <input type="text" class="form-control" style="width:50%" id="fathername" placeholder="Enter Father's Name">
+    <img src="mike.jpg" width="40px" onclick="startDictation('fathername')">
+  </div>
+        <div class="form-group">
+    <label for="department">Department:</label>
+    <input type="text" class="form-control" id="department" style="width:50%" placeholder="Enter Department">
+    <img src="mike.jpg" width="40px" onclick="startDictation('department')">
+  </div>
+        <div class="form-group">
+    <label for="designation">Designation:</label>
+    <input type="text" class="form-control" id="designation" style="width:50%" placeholder="Enter Designation">
+    <img src="mike.jpg" width="40px" onclick="startDictation('designation')">
+  </div>
+        <div class="form-group">
+    <label for="localaddress">Local Address:</label>
+    <textarea class="form-control" id="localaddress" style="width:50%" rows="3"></textarea>
+    <img src="mike.jpg" width="40px" onclick="startDictation('localaddress')">
+  </div>
+    <div class="form-group">
+    <label for="Permanentaddress">Permanent Address:</label>
+    <textarea class="form-control" id="Permanentaddress" style="width:50%" rows="3"></textarea>
+    <img src="mike.jpg" width="40px" onclick="startDictation('Permanentaddress')">
+  </div>
+        <div class="form-group">
+    <label for="maritalstatus">Marital Status:</label>
+    <select class="form-control" style="width:50%" id="maritalstatus" >
+      <option>Married</option>
+      <option>Un-Married</option>
+        
+    </select>
+  </div>
+         <div class="form-group"> 
+        <label class="control-label" for="dob">Date Of Birth:</label>
+        <input class="form-control" id="dob" name="dob" style="width:50%"  placeholder="MM/DD/YYYY" type="text"/>
+      </div>
+        <div class="form-group"> 
+        <label class="control-label" for="doj">Date Of Joining:</label>
+        <input class="form-control" id="doj" name="doj" style="width:50%"  placeholder="MM/DD/YYYY" type="text"/>
+      </div>
+    <div class="form-group">
+    <label for="phone">Phone No:</label>
+    <input type="text" class="form-control" id="phone" style="width:50%" placeholder="Enter Phone No.">
+    <img src="mike.jpg" width="40px" onclick="startDictation('phone')">
+  </div>
+    <div class="form-group">
+    <label for="aadhar">Aadhar No:</label>
+    <input type="text" class="form-control" id="aadhar" style="width:50%" placeholder="Enter Aadhar No.">
+        <img src="mike.jpg" width="40px" onclick="startDictation('aadhar')">
+  </div>
+    <div class="form-group">
+    <label for="bankno">Bank Account No:</label>
+    <input type="text" class="form-control" id="bankno" style="width:50%" placeholder="Enter Bank Account No.">
+  </div>
+    <div class="form-group">
+    <label for="ifsc">IFSC Code:</label>
+    <input type="text" class="form-control" id="ifsc" style="width:50%" placeholder="Enter IFSC">
+  </div>
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="Check1">
+    <label class="form-check-label" for="Check1">All Details are Correct</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</body>
+<script>
+    
+     function startDictation(x) {
+  
+    if (window.hasOwnProperty('webkitSpeechRecognition')) {
+
+      var recognition = new webkitSpeechRecognition();
+
+      recognition.continuous = false;
+      recognition.interimResults = false;
+
+      recognition.lang = "en-Us";
+      recognition.start();
+      recognition.onresult = function(e) {
+          if(x=="phone" || x=="aadhar")
+              {
+        document.getElementById(x).value = parseInt(e.results[0][0].transcript);
+        recognition.stop();
+              }
+          else{ 
+              document.getElementById(x).value= e.results[0][0].transcript;
+        recognition.stop();
+          }
+       };
+
+      recognition.onerror = function(e) {
+        recognition.stop();
+      }
+
+    }
+  
+  
+  }
+    </script>
+</html>
